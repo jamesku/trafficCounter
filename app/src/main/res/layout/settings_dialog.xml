@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/CurrentDatabaseTextView"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textSize="28dp"
+         />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Database"
+        android:id="@+id/DeleteDbButton"
+        android:layout_gravity="center_horizontal"
+        android:onClick="DeleteDatabase"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Another Database"
+        android:id="@+id/ListDatabasesTextView"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:spinnerMode="dropdown"
+        android:singleLine="false"
+        android:layout_gravity="center_horizontal"
+        />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Type New Database Name Here"
+        android:id="@+id/newDB"
+        android:layout_gravity="center_horizontal"
+         />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Database"
+        android:id="@+id/newDbButton"
+        android:onClick="CreateNewDatabase"
+        android:layout_gravity="center_horizontal"/>
+</LinearLayout>

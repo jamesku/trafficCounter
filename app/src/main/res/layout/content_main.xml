@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="edu.utexas.ctr.trafficcounterbasic.MainActivity"
+    android:weightSum="1">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:src="@drawable/northarrow"
+        android:layout_centerInParent="true"/>
+
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="0dp"
+        app:layout_widthPercent="30%"
+        android:layout_height="wrap_content"
+        android:text="Through"
+        android:id="@+id/northThrough"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="setNorthThrough"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Right Turn"
+        android:id="@+id/northRight"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/northThrough"
+        android:layout_toStartOf="@+id/northThrough"
+        android:onClick="setNorthRight"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Left Turn"
+        android:id="@+id/northLeft"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/northThrough"
+        android:layout_toEndOf="@+id/northThrough"
+        android:onClick="setNorthLeft"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Left"
+        android:id="@+id/westLeft"
+        android:onClick="setWestLeft"
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/northRightHeavy"
+        android:layout_alignLeft="@+id/westThrough"
+        android:layout_alignStart="@+id/westThrough" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Through"
+        android:id="@+id/westThrough"
+        android:onClick="setWestThrough"
+        android:layout_below="@+id/westLeft"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="27dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Right"
+        android:id="@+id/westRight"
+        android:onClick="setWestRight"
+        android:layout_below="@+id/westThrough"
+        android:layout_toLeftOf="@+id/westThroughHeavy"
+        android:layout_toStartOf="@+id/westThroughHeavy"
+        android:layout_marginTop="24dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Left"
+        android:id="@+id/eastLeft"
+        android:layout_alignTop="@+id/westRight"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="setEastLeft"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Through"
+        android:id="@+id/eastThrough"
+        android:layout_alignTop="@+id/westThrough"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="setEastThrough"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Right"
+        android:id="@+id/eastRight"
+        android:layout_alignTop="@+id/westLeft"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="setEastRight"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Right Turn"
+        android:id="@+id/southRight"
+        android:layout_below="@+id/southRightHeavy"
+        android:layout_toRightOf="@+id/southThrough"
+        android:layout_toEndOf="@+id/southThrough"
+        android:onClick="setSouthRight"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Left Turn"
+        android:id="@+id/southLeft"
+        android:layout_above="@+id/intersection"
+        android:layout_toLeftOf="@+id/southThrough"
+        android:layout_toStartOf="@+id/southThrough"
+        android:onClick="setSouthLeft"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="0dp"
+        app:layout_widthPercent="30%"
+        android:layout_height="wrap_content"
+        android:text="Through"
+        android:id="@+id/southThrough"
+        android:layout_below="@+id/southThroughHeavy"
+        android:layout_alignLeft="@+id/northThrough"
+        android:layout_alignStart="@+id/northThrough"
+        android:onClick="setSouthThrough"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/intersection"
+        android:text=""
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/westRight"
+        android:layout_alignStart="@+id/westRight" />
+
+    <Button
+        android:background="#993333"
+        android:layout_width="120px"
+        android:layout_height="wrap_content"
+        android:text="Hvy"
+        android:id="@+id/northRightHeavy"
+        android:onClick="setNorthRightHeavy"
+        android:layout_alignTop="@+id/northThroughHeavy"
+        android:layout_alignRight="@+id/westLeft"
+        android:layout_alignEnd="@+id/westLeft" />
+
+    <Button
+        android:background="#993333"
+        android:layout_width="120px"
+        android:layout_height="wrap_content"
+        android:text="Hvy"
+        android:id="@+id/northThroughHeavy"
+        android:onClick="setNorthThroughHeavy"
+        android:layout_below="@+id/northThrough"
+        android:layout_alignLeft="@+id/southThroughHeavy"
+        android:layout_alignStart="@+id/southThroughHeavy" />
+
+    <Button
+        android:background="#993333"
+        android:layout_width="120px"
+        android:layout_height="wrap_content"
+        android:text="Hvy"
+        android:id="@+id/northLeftHeavy"
+        android:onClick="setNorthLeftHeavy"
+        android:layout_above="@+id/westLeft"
+        android:layout_alignLeft="@+id/eastRight"
+        android:layout_alignStart="@+id/eastRight" />
+
+    <Button
+        android:layout_width="120px"
+        android:layout_height="wrap_content"
+        android:background="#993333"
+        android:text="Hvy"
+        android:id="@+id/westLeftHeavy"
+        android:layout_alignTop="@+id/westLeft"
+        android:layout_toRightOf="@+id/westThrough"
+        android:layout_toEndOf="@+id/westThrough"
+        android:onClick="setWestLeftHeavy"/>
+
+    <Button
+        android:background="#993333"
+        android:layout_width="120px"
+        android:layout_height="wrap_content"
+        android:text="Hvy"
+        android:id="@+id/westThroughHeavy"
+        android:onClick="setWestThroughHeavy"
+        android:layout_alignTop="@+id/westThrough"
+        android:layout_alignLeft="@+id/westLeftHeavy"
+        android:layout_alignStart="@+id/westLeftHeavy" />
+
+    <Button
+        android:background="#993333"
+        android:layout_width="120px"
+        android:layout_height="wrap_content"
+        android:text="Hvy"
+        android:id="@+id/westRightHeavy"
+        android:layout_alignBottom="@+id/westRight"
+        android:layout_toRightOf="@+id/westRight"
+        android:layout_toEndOf="@+id/westRight"
+        android:onClick="setWestRightHeavy"/>
+
+    <Button
+        android:background="#993333"
+        android:layout_width="120px"
+        android:layout_height="wrap_content"
+        android:text="Hvy"
+        android:id="@+id/eastRightHeavy"
+        android:layout_alignTop="@+id/eastRight"
+        android:layout_toLeftOf="@+id/eastThrough"
+        android:layout_toStartOf="@+id/eastThrough"
+        android:onClick="setEastRightHeavy"/>
+
+    <Button
+        android:background="#993333"
+        android:layout_width="120px"
+        android:layout_height="wrap_content"
+        android:text="Hvy"
+        android:id="@+id/eastThroughHeavy"
+        android:layout_alignTop="@+id/eastThrough"
+        android:layout_alignLeft="@+id/eastRightHeavy"
+        android:layout_alignStart="@+id/eastRightHeavy"
+        android:onClick="setEastThroughHeavy"/>
+
+    <Button
+        android:background="#993333"
+        android:layout_width="120px"
+        android:layout_height="wrap_content"
+        android:text="Hvy"
+        android:id="@+id/eastLeftHeavy"
+        android:layout_alignTop="@+id/eastLeft"
+        android:layout_alignLeft="@+id/eastThroughHeavy"
+        android:layout_alignStart="@+id/eastThroughHeavy"
+        android:onClick="setEastLeftHeavy"/>
+
+    <Button
+        android:background="#993333"
+        android:layout_width="120px"
+        android:layout_height="wrap_content"
+        android:text="Hvy"
+        android:id="@+id/southLeftHeavy"
+        android:onClick="setSouthLeftHeavy"
+        android:layout_above="@+id/southLeft"
+        android:layout_alignRight="@+id/westRight"
+        android:layout_alignEnd="@+id/westRight" />
+
+    <Button
+        android:background="#993333"
+        android:layout_width="120px"
+        android:layout_height="wrap_content"
+        android:text="Hvy"
+        android:id="@+id/southThroughHeavy"
+        android:layout_above="@+id/southLeft"
+        android:layout_centerHorizontal="true"
+        android:onClick="setSouthThroughHeavy"/>
+
+    <Button
+        android:background="#993333"
+        android:layout_width="120px"
+        android:layout_height="wrap_content"
+        android:text="Hvy"
+        android:id="@+id/southRightHeavy"
+        android:onClick="setSouthRightHeavy"
+        android:layout_above="@+id/southThrough"
+        android:layout_alignLeft="@+id/eastLeft"
+        android:layout_alignStart="@+id/eastLeft" />
+
+</android.support.percent.PercentRelativeLayout>
+
